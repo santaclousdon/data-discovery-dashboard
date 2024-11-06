@@ -50,7 +50,17 @@ export const useCompanies = () => {
   };
 
   const deleteSelectedCompanies = () => {
-    setSelectedCompanies(new Set());
+    const companiNames = Array.from(selectedCompanies).map(
+      (id) => companies.find((company) => company.id === id)?.name
+    );
+    const confirmed = window.confirm(
+      `Are you sure you want to delete these ${companiNames.join(
+        ", "
+      )} companies?`
+    );
+    if (confirmed) {
+      setSelectedCompanies(new Set());
+    }
   };
 
   const loadNextPage = () => {

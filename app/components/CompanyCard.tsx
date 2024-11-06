@@ -18,7 +18,7 @@ const CompanyCard: React.FC<CompanyCardProps> = ({
       <div className="flex items-center space-x-4">
         <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center group-hover:scale-105 transition-transform">
           <span className="text-lg font-semibold text-purple-600">
-            {company.name.charAt(0)}
+            {company.name.split(" ")[1]}
           </span>
         </div>
 
