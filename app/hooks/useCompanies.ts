@@ -1,11 +1,13 @@
 "use client";
 
-import axios from "axios";
 import { useState } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
+import axios from "axios";
 
-const fetchCompanies = async (page: number) => {
-  const { data } = await axios.get(`/api/companies?page=${page}&pageSize=15`);
+const fetchCompanies = async (page: number, pageSize = 15) => {
+  const { data } = await axios.get(
+    `/api/companies?page=${page}&pageSize=${pageSize}`
+  );
   return data;
 };
 
@@ -13,7 +15,6 @@ export const useCompanies = () => {
   const [selectedCompanies, setSelectedCompanies] = useState<Set<number>>(
     new Set()
   );
-
   const {
     data,
     isLoading,
@@ -29,7 +30,7 @@ export const useCompanies = () => {
       if (lastPage.hasMore && lastPage.companies.length > 0) {
         return lastPage.page + 1;
       }
-      return undefined; // Returning undefined signals there's no next page
+      return undefined;
     },
     initialPageParam: 1,
   });
@@ -49,7 +50,6 @@ export const useCompanies = () => {
   };
 
   const deleteSelectedCompanies = () => {
-    console.log("Deleting data for companies:", Array.from(selectedCompanies));
     setSelectedCompanies(new Set());
   };
 
@@ -59,14 +59,12 @@ export const useCompanies = () => {
     }
   };
 
-  console.log(companies);
-
   return {
     companies,
     isLoading,
     isError,
     isFetchingNextPage,
-    isFetching: isFetching || isFetchingNextPage,
+    isFetching: isFetching,
     hasNextPage,
     selectedCompanies,
     toggleSelectCompany,

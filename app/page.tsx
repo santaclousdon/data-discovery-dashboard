@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import CompanyList from "./components/CompanyList";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import CompanyList from "./components/CompanyList";
 
 const queryClient = new QueryClient();
 

@@ -1,7 +1,7 @@
 import React from "react";
 import type { SVGProps } from "react";
 
-const Loading = (props: SVGProps<SVGSVGElement>) => {
+const Loading: React.FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
