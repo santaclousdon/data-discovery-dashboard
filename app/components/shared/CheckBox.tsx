@@ -1,3 +1,10 @@
+/**
+ * CheckBox Component
+ * 
+ * A reusable checkbox component with custom styling.
+ * Features animated check mark and purple accent colors.
+ */
+
 import React from "react";
 
 type CheckBoxProps = {

@@ -1,3 +1,10 @@
+/**
+ * CompanyCard Component
+ * 
+ * Renders an individual company card with selection functionality.
+ * Displays company name and provides checkbox interaction.
+ */
+
 import React from "react";
 import CheckBox from "./shared/CheckBox";
 import { Company } from "@/types";

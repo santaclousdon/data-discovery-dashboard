@@ -1,3 +1,12 @@
+/**
+ * Companies API Route
+ * 
+ * Handles GET requests for paginated company data.
+ * Supports query parameters:
+ * - page: Current page number (default: 1)
+ * - pageSize: Number of items per page (default: 10)
+ */
+
 import { NextResponse } from 'next/server';
 import {companies} from '@/constant'
 

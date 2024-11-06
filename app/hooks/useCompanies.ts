@@ -1,9 +1,25 @@
 "use client";
 
+/**
+ * useCompanies Hook
+ * 
+ * Manages company data fetching, pagination, and selection state.
+ * Provides functionality for:
+ * - Infinite scrolling with React Query
+ * - Company selection management
+ * - Batch deletion of selected companies
+ */
+
 import { useState } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import axios from "axios";
 
+/**
+ * Fetches paginated company data from the API
+ * @param page - The page number to fetch
+ * @param pageSize - Number of companies per page, defaults to 15
+ * @returns Paginated company data with metadata
+ */
 const fetchCompanies = async (page: number, pageSize = 15) => {
   const { data } = await axios.get(
     `/api/companies?page=${page}&pageSize=${pageSize}`
@@ -37,6 +53,10 @@ export const useCompanies = () => {
 
   const companies = data?.pages.flatMap((page) => page.companies) ?? [];
 
+  /**
+   * Toggles the selection state of a company
+   * @param id - The ID of the company to toggle
+   */
   const toggleSelectCompany = (id: number) => {
     setSelectedCompanies((prevSelected) => {
       const updatedSelected = new Set(prevSelected);
@@ -49,6 +69,11 @@ export const useCompanies = () => {
     });
   };
 
+  /**
+   * Handles the deletion of selected companies
+   * Shows confirmation dialog with company names
+   * Clears selection after confirmation
+   */
   const deleteSelectedCompanies = () => {
     const companiNames = Array.from(selectedCompanies).map(
       (id) => companies.find((company) => company.id === id)?.name
@@ -63,6 +88,10 @@ export const useCompanies = () => {
     }
   };
 
+  /**
+   * Triggers loading of the next page of companies
+   * Only loads if there are more pages available
+   */
   const loadNextPage = () => {
     if (hasNextPage) {
       fetchNextPage();

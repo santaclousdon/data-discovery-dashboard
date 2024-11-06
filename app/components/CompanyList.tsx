@@ -1,5 +1,13 @@
 "use client";
 
+/**
+ * CompanyList Component
+ * 
+ * Displays a paginated list of companies with infinite scroll functionality.
+ * Allows selection and deletion of multiple companies.
+ * Uses Intersection Observer for infinite scroll implementation.
+ */
+
 import { FC, useEffect, useRef } from "react";
 import CompanyCard from "./CompanyCard";
 import Loading from "./shared/Loading";

@@ -1,3 +1,10 @@
+/**
+ * Loading Component
+ * 
+ * Displays an animated loading spinner.
+ * Uses SVG with CSS animation for smooth rotation effect.
+ */
+
 import React from "react";
 import type { SVGProps } from "react";
 
