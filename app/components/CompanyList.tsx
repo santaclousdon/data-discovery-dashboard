@@ -76,7 +76,7 @@ const CompanyList: FC = () => {
             checked={selectedCompanies.has(company.id)}
           />
         ))}
-        <div ref={loadMoreRef} className="h-10">
+        <div ref={loadMoreRef} className="h-10 flex items-center justify-center w-full">
           {isFetchingNextPage && <Loading />}
         </div>
       </div>
