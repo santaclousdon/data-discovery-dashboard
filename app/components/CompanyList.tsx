@@ -54,7 +54,7 @@ const CompanyList: FC = () => {
   if (isLoading)
     return (
       <div className="flex justify-center items-center h-screen">
-        <Loading />
+        <Loading width={50} height={50} />
       </div>
     );
   if (isError)
@@ -77,7 +77,7 @@ const CompanyList: FC = () => {
           />
         ))}
         <div ref={loadMoreRef} className="h-10 flex items-center justify-center w-full">
-          {isFetchingNextPage && <Loading />}
+          {isFetchingNextPage && <Loading width={50} height={50} />}
         </div>
       </div>
       <div className="fixed bottom-4 left-4 right-4 max-w-2xl mx-auto">

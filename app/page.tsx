@@ -2,13 +2,17 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import CompanyList from "./components/CompanyList";
+import { useState, useEffect } from "react";
 
 const queryClient = new QueryClient();
 
+
+
 export default function Home() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <CompanyList />
-    </QueryClientProvider>
-  );
+
+    return (
+      <QueryClientProvider client={queryClient}>
+        <CompanyList />
+      </QueryClientProvider>
+    );
 }
