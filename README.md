@@ -9,6 +9,7 @@ A modern dashboard interface built with React, Next.js, and TypeScript that help
 - Data deletion request initiation
 - Modern, responsive interface
 - TypeScript integration for better development experience
+- Implement test using Jest.
 
 ## Getting Started
 
@@ -34,12 +35,27 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the dashboard.
 
+## Running Tests
+
+This project uses Jest and React Testing Library for unit and integration tests.
+
+To run tests, use the following command:
+
+```bash
+npm test
+# or
+yarn test
+# or
+pnpm test
+```
+
 ## Tech Stack
 
 - [Next.js](https://nextjs.org) - React framework for production
 - TypeScript - For type safety and better developer experience
 - React - UI library
 - Tailwind CSS - For styling
+- Jest - For testing
 
 ## Learn More
 
@@ -49,3 +65,4 @@ To learn more about the technologies used in this project:
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [JEST Documentation](https://jestjs.io/docs/)
