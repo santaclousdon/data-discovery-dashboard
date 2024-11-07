@@ -15,8 +15,8 @@ const Loading = (props: SVGProps<SVGSVGElement>) => {
       width="1em"
       height="1em"
       viewBox="0 0 24 24"
-	  role="status"
-	  aria-label="Loading"
+      role="status"
+      aria-label="Loading"
       {...props}
     >
       <g>

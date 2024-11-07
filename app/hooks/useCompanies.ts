@@ -2,7 +2,7 @@
 
 /**
  * useCompanies Hook
- * 
+ *
  * Manages company data fetching, pagination, and selection state.
  * Provides functionality for:
  * - Infinite scrolling with React Query

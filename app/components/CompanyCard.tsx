@@ -1,6 +1,6 @@
 /**
  * CompanyCard Component
- * 
+ *
  * Renders an individual company card with selection functionality.
  * Displays company name and provides checkbox interaction.
  */

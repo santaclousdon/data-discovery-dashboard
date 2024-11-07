@@ -2,7 +2,7 @@
 
 /**
  * CompanyList Component
- * 
+ *
  * Displays a paginated list of companies with infinite scroll functionality.
  * Allows selection and deletion of multiple companies.
  * Uses Intersection Observer for infinite scroll implementation.
@@ -76,7 +76,10 @@ const CompanyList: FC = () => {
             checked={selectedCompanies.has(company.id)}
           />
         ))}
-        <div ref={loadMoreRef} className="h-10 flex items-center justify-center w-full">
+        <div
+          ref={loadMoreRef}
+          className="h-10 flex items-center justify-center w-full"
+        >
           {isFetchingNextPage && <Loading width={50} height={50} />}
         </div>
       </div>
