@@ -18,7 +18,7 @@ const CheckBox: React.FC<CheckBoxProps> = ({ checked, onChange }) => {
       <input
         type="checkbox"
         checked={checked}
-        onChange={(e) => onChange()}
+        onChange={onChange}
         className="sr-only peer"
       />
       <div className="w-6 h-6 border-2 border-purple-300 rounded-md peer-checked:bg-purple-600 peer-checked:border-purple-600 transition-all duration-200 flex items-center justify-center">
